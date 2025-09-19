@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CMPE-281 Lab 1 — Movie Search</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1><span class="chip">Cloud Lab Assignment 1</span></h1>
+      <h1>CMPE-281 | <span id="studentName">Dhruv Jain</span></h1>
+      <p class="sub">Movie Details Fetcher • Powered by OMDb and TMDB API</p>
+      <div class="meta">
+        <span id="studentId">Student ID: 019150859</span>
+        <a>Contact Me: </a>
+        <a id="studentEmail" href="mailto:dhruvsachin.jain@sjsu.edu">Email ID</a>
+        <a id="studentLinkedin" href="https://www.linkedin.com/in/dhruvjain314" target="_blank"
+           rel="noopener noreferrer">
+            LinkedIn
+        </a>
+
+      </div>
+    </header>
+
+    <section class="searchCard">
+      <label for="q" class="label">Search for a movie</label>
+      <div class="searchBox">
+        <input id="q" type="text" autocomplete="off" placeholder="Start typing (e.g., Inception)"/>
+        <button id="clearBtn" aria-label="Clear">×</button>
+        <ul id="suggestions" class="suggestions" role="listbox" aria-label="Suggestions"></ul>
+      </div>
+     <div class="actions">
+      <button id="searchBtn" class="btn">Search</button>
+      <span id="ping" class="muted"></span>
+    </div>
+    </section>
+
+    <section id="result" class="result hidden" aria-live="polite"></section>
+  </main>
+
+  <script>
+    // Personalize the header (edit here for local demo; in AWS you’ll set your real info)
+    const student = {
+      name: "Dhruv Jain",
+      id: "019150859",
+      email: "dhruvsachin.jain@sjsu.edu",
+      linkedin: "https://www.linkedin.com/in/dhruvjain314"
+    };
+    document.getElementById('studentName').textContent = student.name;
+    document.getElementById('studentId').textContent = `Student ID: ${student.id}`;
+    document.getElementById('studentEmail').href = `mailto:${student.email}`;
+    document.getElementById('studentLinkedin').href = student.linkedin;
+  </script>
+  <script src="app.js" type="module"></script>
+</body>
+</html>
